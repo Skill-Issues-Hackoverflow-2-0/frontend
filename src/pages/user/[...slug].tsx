@@ -9,41 +9,42 @@ import {
 import { useEffect, useState } from "react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
+import axios from "axios";
 
 export default function User() {
   const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
     // fetch user data
-    // async function fetchUser() {
-    //   const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
-    //   const data = await res.json();
-    //   setUser(data);
-    //   console.log(data);
-    // }
-    // fetchUser();
+    async function fetchUser() {
+      const res = await axios.post("http://localhost:5000/api/auth/me", { withCredentials: true });
+      const data = await res;
+      console.log(data);
+      setUser(data);
+    }
+    fetchUser();
 
-    setUser({
-      name: "John Doe",
-      phone: "123-456-7890",
-      bills: [
-        {
-          id: 1,
-          date: "2022-01-01",
-          amount: 100.0,
-        },
-        {
-          id: 2,
-          date: "2022-02-01",
-          amount: 200.0,
-        },
-        {
-          id: 3,
-          date: "2022-03-01",
-          amount: 300.0,
-        },
-      ],
-    });
+    // setUser({
+    //   name: "John Doe",
+    //   phone: "123-456-7890",
+    //   bills: [
+    //     {
+    //       id: 1,
+    //       date: "2022-01-01",
+    //       amount: 100.0,
+    //     },
+    //     {
+    //       id: 2,
+    //       date: "2022-02-01",
+    //       amount: 200.0,
+    //     },
+    //     {
+    //       id: 3,
+    //       date: "2022-03-01",
+    //       amount: 300.0,
+    //     },
+    //   ],
+    // });
   }, []);
   return (
     <div className="min-h-screen p-12">
