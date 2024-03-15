@@ -23,8 +23,12 @@ const Map = () => {
              L.latLng(13.336818775814127, 74.74331442902206),
              L.latLng(13.352385434556018, 74.7927110262844),
            ],
+           addWaypoints: false,
            routeWhileDragging: true,
+           autoRoute: true,
+        //    geocoder: true,
          }).addTo(map)
+
         //  map.remove()
          //return () => routingControl.removeFrom(map)
        }, [map])
