@@ -3,7 +3,7 @@ import axios from "axios"
 export const useAuth = async () => {
   try {
     const response = await axios.post(
-      'https://localhost:5000/api/auth/me',
+      'http://localhost:5000/api/auth/me',
       {},
       {
         headers: {

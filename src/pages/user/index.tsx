@@ -10,42 +10,12 @@ import { useEffect, useState } from "react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function User() {
-  const [user, setUser] = useState<any>(null);
 
-  useEffect(() => {
-    // fetch user data
-    async function fetchUser() {
-      const res = await axios.post("http://localhost:5000/api/auth/me", { withCredentials: true });
-      const data = await res;
-      console.log(data);
-      setUser(data);
-    }
-    fetchUser();
-
-    // setUser({
-    //   name: "John Doe",
-    //   phone: "123-456-7890",
-    //   bills: [
-    //     {
-    //       id: 1,
-    //       date: "2022-01-01",
-    //       amount: 100.0,
-    //     },
-    //     {
-    //       id: 2,
-    //       date: "2022-02-01",
-    //       amount: 200.0,
-    //     },
-    //     {
-    //       id: 3,
-    //       date: "2022-03-01",
-    //       amount: 300.0,
-    //     },
-    //   ],
-    // });
-  }, []);
+  const user = useAuth()
+  
   return (
     <div className="min-h-screen p-12">
       <div className="flex flex-col justify-center items-center text-center text-gray-100 text-xl gap-3 p-3">
