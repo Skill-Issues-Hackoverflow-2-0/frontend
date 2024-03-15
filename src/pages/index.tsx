@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Component() {
   return (
-    <div className="flex flex-col min-h-[100dvh]">
+    <div className="flex flex-col min-h-screen">
       <div className="fixed w-full h-screen bg-[url('/bg.png')] -z-10"></div>
       <header className="px-4 lg:px-6 h-14 flex items-center text-gray-100">
         <Link className="flex items-center justify-center" href="#">

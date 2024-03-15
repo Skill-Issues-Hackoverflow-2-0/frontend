@@ -7,6 +7,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -24,59 +34,75 @@ export default function TabsDemo() {
     },
   ];
   return (
-    <Tabs defaultValue="Bills" className="w-[800px]">
-      <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="Bills">Bills</TabsTrigger>
-        <TabsTrigger value="enquire">Enquire</TabsTrigger>
-      </TabsList>
-      <TabsContent value="Bills">
-        <Card>
-          <CardHeader>
-            <CardTitle>Bills</CardTitle>
-            <CardDescription>
-              All the users who are did not pay bills yet.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            {/* Map through all the  */}
-            {data.map((bill, index) => (
-              <div key={index} className="flex items-center justify-between">
-                <div>
-                  <p className="text-lg font-semibold">{bill.vehicleNum}</p>
-                  <p className="text-sm text-gray-500">Fine: {bill.fine}</p>
+    <div className="min-h-screen flex justify-center items-center">
+      <Tabs defaultValue="Bills" className="w-[800px]">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="Bills">Bills</TabsTrigger>
+          <TabsTrigger value="enquire">Enquire</TabsTrigger>
+        </TabsList>
+        <TabsContent value="Bills">
+          <Card>
+            <CardHeader className="text-center">
+              <CardTitle>Bills</CardTitle>
+              <CardDescription>
+                All the users who are did not pay bills yet.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              {/* Map through all the  */}
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Vehicle Number</TableHead>
+                    <TableHead>Total Bill</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {data.map((bill, index) => (
+                    <TableRow key={index}>
+                      <TableCell className="">{bill.vehicleNum}</TableCell>
+                      <TableCell className="">{bill.fine}</TableCell>
+                      <TableCell className="flex justify-end">
+                        <Button>Create Warrant</Button>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </CardContent>
+            <CardFooter></CardFooter>
+          </Card>
+        </TabsContent>
+        <TabsContent value="enquire">
+          <Card className="text-center">
+            <CardHeader>
+              <CardTitle>Enquire</CardTitle>
+              <CardDescription>
+                Change your enquire here. After saving, youll be logged out.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              <div className="flex gap-12 ">
+                <div className="space-y-1 w-full">
+                  <Label htmlFor="current">Lattitude</Label>
+                  <Input id="current" type="text" inputMode="numeric" />
                 </div>
-                <Button variant="destructive">Pay</Button>
+                <div className="space-y-1 w-full">
+                  <Label htmlFor="new">Longitude</Label>
+                  <Input id="new" type="text" inputMode="numeric" />
+                </div>
               </div>
-            ))}
-          </CardContent>
-          <CardFooter>
-            <Button>Save changes</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-      <TabsContent value="enquire">
-        <Card>
-          <CardHeader>
-            <CardTitle>Enquire</CardTitle>
-            <CardDescription>
-              Change your enquire here. After saving, youll be logged out.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="current">Current enquire</Label>
-              <Input id="current" type="enquire" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="new">New enquire</Label>
-              <Input id="new" type="enquire" />
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save enquire</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-    </Tabs>
+              <div className="space-y-1">
+                <Label htmlFor="warrant">Warrant</Label>
+                <Input id="warrant" type="file" />
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Button>Search Vehicles</Button>
+            </CardFooter>
+          </Card>
+        </TabsContent>
+      </Tabs>
+    </div>
   );
 }
