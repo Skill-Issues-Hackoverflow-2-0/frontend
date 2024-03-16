@@ -10,11 +10,14 @@ import { useEffect, useState } from "react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
-import { useAuth } from "@/hooks/useAuth";
+import { getUser } from "@/hooks/getUser";
 
 export default function User() {
-
-  const user = useAuth()
+  const [user, setUser] = useState<any>(null);                                                          
+                                                                                                                                            
+  useEffect(() => {
+    getUser().then((res) => setUser(res));                                                                                            
+20    }, []); 
   
   return (
     <div className="min-h-screen p-12">
@@ -23,11 +26,11 @@ export default function User() {
         <div className="flex flex-col justify-center items-center">
           <div className="flex gap-2 ">
             <div className="">Name: </div>
-            <div className="">{user?.name}</div>
+            <div className="">{user?.Name}</div>
           </div>
           <div className="flex gap-2 ">
             <div className="">Phone Number: </div>
-            <div className="">{user?.phone}</div>
+            <div className="">{user?.Phone}</div>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const useAuth = async () => {
+export const getUser = async () => {
   try {
     const response = await axios.post(
       'http://localhost:5000/api/auth/me',

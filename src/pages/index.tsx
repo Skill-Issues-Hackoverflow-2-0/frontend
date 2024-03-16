@@ -15,13 +15,13 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import axios from 'axios'
-import { useAuth } from '@/hooks/useAuth'
+import { getUser } from '@/hooks/getUser'
 import { useState } from 'react'
 import Router from 'next/router'
 import { useRouter } from 'next/router'
 
 export default function Component() {
-  const user = useAuth()
+  const user = getUser()
   const [flag, setFlag] = useState<boolean>(true)
   const router = useRouter()
   // if(user === null){

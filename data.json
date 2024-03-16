@@ -1,0 +1,78 @@
+{
+  "KA-29-MC-2918": [{
+    "location":"18.89134667423183, 73.17065165738799",
+    "reason":"Skipping Red Light",
+    "amount":"100"
+  }],
+    
+  "KA-09-K-0020": [{
+   "location":"18.88976312333817, 73.16859172101303",
+    "reason":"Overspeeding",
+    "amount":"350"
+  }],
+  "KA-64-AB-2008": [{
+    "location":"18.89705492095495, 73.1814524094666",
+    "reason":"Overspeeding",
+    "amount":"500"
+  }],
+  "KA-04-EO-1316": [{
+    "location":"18.89501355595775, 73.19859891438956",
+    "reason":"No parking",
+    "amount":"100"
+  }],
+  "KA-48-AE-1208": [{
+    "location":"18.905703326565057, 73.20932460119634",
+    "reason":"Wrong  side",
+    "amount":"100"
+  }],
+  "KA-24-B-1008": [{
+    "location":"18.885961154358252, 73.27908800715745",
+    "reason":"Skipping Red Light",
+    "amount":"250"
+  }],
+  "KA-20-F-2005": [{
+    "location":"18.844382812259976, 73.18214306915675",
+    "reason":"No parking",
+    "amount":"600"
+  }],
+  "KA-24-HE-1023": [{
+    "location":"18.941581140389644, 73.10375906391936",
+    "reason":"Wrong  side",
+    "amount":"350"
+  }],
+  "KA-24-AB-2r324": [{
+    "location":"18.879734186876277, 73.30021940045053",
+    "reason":"No parking",
+    "amount":"800"
+  }],
+  "KA-24-FB-2342": [{
+    "location":"18.824178683015322, 73.36826338797574",
+    "reason":"Wrong  side",
+    "amount":"400"
+  }],
+  "KA-4-B-2883": [{
+    "location":"18.85921867147146, 73.06573448265527",
+    "reason":"Overspeeding",
+    "amount":"300"
+  }],
+  "KA-4-AB-2008": [{
+    "location":"18.98132780624328, 73.38293954214785",
+    "reason":"Overspeeding",
+    "amount":"300"
+  }],
+  "KA-05-D-8342": [{
+    "location":"18.82859854392452, 73.12677394205289",
+    "reason":"No parking",
+    "amount":"200"
+  }],
+  "KA-24-B-2756": [{
+    "location":"18.918864509295204, 73.39694859840306",
+    "reason":"Drink and Drive",
+    "amount":"500"
+  }],
+  "KA-21-AB-2008": [{
+    "location":"18.81818011303132, 73.22917347083256",
+    "reason":"Drink and Drive",
+    "amount":"550"
+  }]
+}
